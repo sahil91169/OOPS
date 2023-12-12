@@ -1,0 +1,285 @@
+#include<iostream>
+#include<string.h>
+#include<conio.h>
+#include<fstream>
+#include<unistd.h>
+#include<windows.h>
+#include<map>
+using namespace std;
+class one
+{
+
+
+public:
+ void menu1();
+
+};
+void one::menu1()
+{
+
+  cout<<"\n\n\n\t\t\t\t\t\t ========== WELCOME TO FOOD ORDERING SYSTEM =========="<<endl;
+ cout<<"\n\n\t\t\t\t\t\t\t       =====START YOUR ORDER====="<<endl;
+  cout<<"\n\n\n\t==================\t\t\t====================\t\t\t\t======================="<<endl;
+cout<<"[1] MILK (Rs.48) \n [2] CHOCOLATE(Rs.44)\n [3] BUTTER (Rs.58) \n [4] CHEESE (Rs.52)\n [5] BISCUIT(Rs.35)\n [6] LOLIPOP (Rs.400)\n\t===========================\t\t\t==============================\t\t\t\t===========================\n\n\n [7] EXIT"<<endl;
+ cout<<"\n\t======================================================"<<endl;
+}
+ class two:public one
+ {
+ protected:
+     int item[20],counter=1,item1,item2,item3,item4,item5,item6,item7,item8,item9,item10,item11,item12,item13,item14,item15,ch,a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s=0;
+     string y,ye;
+     public:
+void menu2()
+
+{    ofstream write;
+write.open("order.text");
+if(!write)
+{
+ cout<<"file can not open"<<endl;
+ exit (-1);
+ }
+
+   a:
+
+    b:
+     c:
+     cout<<"\n\n\tENTER YOUR ORDER (one order at a time): ";
+      cin>>ch;
+      item[counter]=ch;
+
+  cout<<"\n\n\tDO YOU WANT TO UPDATE YOUR ORDER (y/n) :";
+  cin>>ye;
+  if(ye=="y"|| ye=="Y")
+  {
+   goto b;
+  }
+  else
+  {
+   switch(ch)
+   {
+    case 1:
+     cout<<"\n\n\t HOW MANY milk YOU WANT : ";
+     cin>>item1;
+
+     a=480;
+     s=s+a*item1;
+     write<<"YOU ORDER IS MILK: 48";
+     write<<" \n";
+     write<<"NUMBER OF ITEM IS : "<<item1;
+     write<<"\n";
+    cout<<"\n\n\n\tYOU ORDERED MILK  "<<endl<<"\tYOUR ORDER SUCCESSFULLY SAVED "<<endl;
+    break;
+
+    case 2:
+     cout<<"\n\n\tHOW MANY CHOCOLATE YOU WANT :";
+     cin>>item2;
+
+     b=440;
+     s=s+b*item2;
+     write<<"YOU ORDER  CHOCOLATE : 44";
+     write<<" \n";
+      write<<"NUMBER OF CHOCOLATE IS : "<<item2;
+     write<<"\n";
+    cout<<"\n\n\n\tYOU ORDERED  CHOCOLATE "<<endl<<"\tYOUR ORDER SUCCESSFULLY SAVED "<<endl;
+    break;
+
+    case 3:
+     cout<<"\n\n\tHOW MANY BUTTER YOU WANT :";
+     cin>>item3;
+
+     c=580;
+     s=s+c*item3;
+      write<<"YOU ORDER  BUTTER  : 58";
+      write<<" \n";
+       write<<"NUMBER OF BUTTER IS : "<<item3;
+     write<<"\n";
+    cout<<"\n\n\n\tYOU ORDERED  BUTTER  "<<endl<<"\tYOUR ORDER SUCCESSFULLY SAVED "<<endl;
+    break;
+
+    case 4:
+     cout<<"\n\n\tHOW MANY CHESE YOU WANT :";
+     cin>>item4;
+
+     d=520;
+     s=s+d*item4;
+     write<<"YOU ORDER  CHESE : 52";
+     write<<" \n";
+     write<<"NUMBER OF CHESE IS : "<<item4;
+     write<<"\n";
+    cout<<"\n\n\n\tYOU ORDERED  CHESE "<<endl<<"\tYOUR ORDER SUCCESSFULLY SAVED "<<endl;
+    break;
+
+    case 5:
+     cout<<"\n\n\tHOW MANY BISCUIT YOU WANT:";
+     cin>>item5;
+
+     e=350;
+     s=s+e*item5;
+     write<<"YOU ORDER BISCUIT : 35";
+     write<<" \n";
+      write<<"NUMBER OF BISCUIT IS : "<<item5;
+     write<<"\n";
+    cout<<"\n\n\n\tYOU ORDERED biscuit "<<endl<<"\tYOUR ORDER SUCCESSFULLY SAVED "<<endl;
+    break;
+
+    case 6:
+     cout<<"\n\n\tHOW MANY lolipop YOU WANT:";
+     cin>>item6;
+
+     f=400;
+     s=s+f*item6;
+     write<<"YOU ORDER lolipop : 40";
+     write<<"\n ";
+      write<<"NUMBER OF lolipop IS : "<<item6;
+     write<<"\n";
+    cout<<"\n\n\n\tYOU ORDERED lolipop "<<endl<<"\tYOUR ORDER SUCCESSFULLY SAVED "<<endl;
+    break;
+
+    case 7:
+    exit(0);
+    break;
+
+    default:
+     cout<<"\n\n\t\t\t\t\t\t\t YOU ENTERED WRONG CHOICE !!!!! "<<endl;
+     goto c;
+     break;
+   }
+   cout<<"\n\tDO YOU WANT ANOTHER ORDER (yes/no) :";
+   cin>>y;
+   if(y=="yes" ||y=="YES")
+   {
+    counter++;
+    goto a;
+
+   }
+   else
+   {
+    cout<<"\n\t\t\t\t\t\t\tTHANK YOU FOR YOUR ORDER :) GENERATING BILL ";
+    for(int a=1;a<8;a++)
+ {
+  Sleep(500);
+  cout << "...";
+ }
+    cout<<"\n\t\t\t\t\t\t\t";
+    system("PAUSE");
+   }
+}
+system("cls");
+
+write.close();
+  }
+  void show1()
+  {
+   menu1();
+    menu2();
+    int pizza;
+    int ch1,i;
+
+    cout << "\n\t\t\t\t\t\t\t ================================================" << endl;
+    cout << "\t\t\t\t\t\t\t|                    Order Details                    |" << endl;
+    cout << "\t\t\t\t\t\t\t ================================================" << endl;
+    cout <<  "\n\t\t\t\t\t\t\t  Bill No : CP51             Date : " << __DATE__ << endl;
+    cout << "\t\t\t\t\t\t\t  Cashier : Harry " << endl;
+    cout << "\t\t\t\t\t\t\t ================================================" << endl;
+
+
+
+            cout << "\t\t\t\t\t\t\t|  Item                  |  Price       |  Quantity" << endl;
+            cout << "\t\t\t\t\t\t\t|------------------------|--------------|------------" << endl;
+
+            for(i=1;i<=counter;i++){
+                    ch1=item[i];
+            switch (ch1) {
+                case 1:
+                    cout << "\t\t\t\t\t\t\tMILK        |  Price: Rs." << a <<"  | Quantity : "<<item1<< endl;
+                    break;
+                case 2:
+                    cout << "\t\t\t\t\t\t\tCHOCOLATE               |  Price: Rs." << b <<"  | Quantity : "<<item2<< endl;
+                    break;
+                 case 3:
+                    cout << "\t\t\t\t\t\t\tBUTTER               |  Price: Rs." << c <<"  | Quantity : "<<item3<< endl;
+                    break;
+                 case 4:
+                    cout << "\t\t\t\t\t\t\tCHESE               |  Price: Rs." << d <<"  | Quantity : "<<item4<< endl;
+                    break;
+                 case 5:
+                    cout << "\t\t\t\t\t\t\tBISCUIT               |  Price: Rs." << e <<"  | Quantity : "<<item5<< endl;
+                    break;
+                 case 6:
+                    cout << "\t\t\t\t\t\t\tLOLIPOP               |  Price: Rs." << f <<"  | Quantity : "<<item6<< endl;
+                    break;
+
+                default:
+                    break;
+            }
+
+            }
+
+cout << "\t\t\t\t\t\t\t ================================================" << endl;
+    cout << "\t\t\t\t\t\t\t|                        Total                       |" << endl;
+    cout << "\t\t\t\t\t\t\t|-----------------------------------------------------|" << endl;
+    cout << "\t\t\t\t\t\t\t|                                  Rs." << s << "       |" << endl;
+    cout << "\t\t\t\t\t\t\t ================================================" << endl;
+
+
+    //write.close();
+}
+
+
+
+};
+class three:public one,public two
+{
+ public:
+  void total()
+      {
+        long userId;
+
+   d:
+   cout<<"\n\n\n\n\n\n\n\n\t\t\t\t\t\t\t---------------------";
+   cout<<"\n\t\t\t\t\t\t\tEnter Login Id = ";
+   cin>>userId;
+   cout<<"\t\t\t\t\t\t\t---------------------";
+   if(userId!=2263)
+   {
+    cout<<"\nWrong id.....Enter correct id\n";
+    goto d;
+   }
+   else
+   cout<<"\n\n\n\t\t\t\t\t\t\tHELLO USER\n";
+   z:
+   string pwd="s";
+   string pass="";
+   char c;
+    cout<<"\n\n\n\t\t\t\t\t\t\tPassword = ";
+    p:
+    c=getch();
+    cout<<"*";
+    if(c!=13)
+    {
+     pass=pass+c;
+     goto p;
+    }
+
+         {
+         if(pass==pwd)
+         {
+          cout<<"\n\n\t\t\t\t\t\t\tAccess Granted. Welcome to our system\n\n\n";
+          system("PAUSE");
+          system("CLS");
+          show1();
+    }
+    else
+    {
+    cout<<"\nWrong Password\n";
+    goto z;
+    }
+   }
+  }
+};
+int main()
+{
+   three ob;
+   ob.total();
+   getch();
+}
